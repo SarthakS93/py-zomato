@@ -44,7 +44,17 @@ def getEstablishmentDetailsOfLatLng(lat = '12.927923', lng = '77.627106'):
     return r.json()
 
 
+def getCuisinesForLatLng(lat = '12.927923', lng = '77.627106'):
+    headers = {'user-key': config.API_KEY}
+    params = {'lat': lat, 'lon': lng}
+    r = requests.get(API_URL + '/cuisines', params = params,
+            headers = headers)
+    print(r.json())
+    print(r.url)
+    return r.json()
+
 #getCategories()
 #getLocationInfo()
 #getEstablishmentDetailsOfCity()
-getEstablishmentDetailsOfLatLng()
+#getEstablishmentDetailsOfLatLng()
+getCuisinesForLatLng()
