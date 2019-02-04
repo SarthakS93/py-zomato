@@ -25,6 +25,14 @@ def getLocationInfo(lat = '12.927923', lng = '77.627106'):
     return r.json()
 
 
-#getCategories()
-getLocationInfo()
+def getEstablishmentDetailsOfCity(cityId = 4):
+    headers = {'user-key': config.API_KEY}
+    params = {'city_id': cityId}
+    r = requests.get(API_URL + '/establishments', params = params,
+            headers = headers)
+    print(r.json())
+    print(r.url)
 
+#getCategories()
+#getLocationInfo()
+getEstablishmentDetailsOfCity()
